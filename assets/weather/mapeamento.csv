@@ -1,0 +1,30 @@
+code;description_ptbr;source;severity;overlay
+0;Nublado;weather-few-clouds;0;
+1;Pancadas de chuva;weather-showers-scattered;1;
+2;Pancadas de neve;weather-snow;1;
+3;Ensolarado;weather-clear;0;
+4;Encoberto;weather-overcast;0;
+5;Chuva fraca;weather-showers-scattered;1;
+6;Neve fraca;weather-snow;1;
+7;Chuva moderada;weather-showers;2;
+8;Neve moderada;weather-snow;2;
+9;Neve forte;weather-snow;3;
+10;Chuva forte;weather-showers;3;
+11;Tempestade de areia;weather-windy;2;dust
+12;Chuva e neve;weather-snow;1;rain
+13;Nevoeiro;weather-fog;0;
+14;Névoa seca;weather-fog;1;
+15;Chuva com trovoadas;weather-storm;1;
+16;Nevasca;weather-snow;3;wind
+17;Poeira;weather-windy;1;dust
+18;Chuva extrema;weather-showers;3;alert
+19;Chuva com granizo;weather-showers;2;hail
+20;Trovoada e granizo;weather-storm;2;hail
+21;Temporal de chuva forte;weather-storm;3;
+22;Areia transportada pelo vento;weather-windy;1;
+23;Tempestade forte de areia;weather-windy;3;dust
+24;Temporal;weather-storm;2;
+25;Clima desconhecido;weather-severe-alert;0;
+26;Nublado à noite;weather-few-clouds-night;0;
+27;Pancadas de chuva à noite;weather-few-clouds-night;1;rain
+28;Céu limpo à noite;weather-clear-night;0;
