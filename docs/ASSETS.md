@@ -2,12 +2,12 @@
 
 | Recurso | Local | Estado |
 | --- | --- | --- |
-| Glifo HAR, silhueta vetorizada a partir da imagem fornecida | `assets/har/har.svg` | Fonte gráfica de referência, não testada no Maker |
+| Glifo HAR, silhueta vetorizada a partir da imagem fornecida | `assets/har/har.svg`, `assets/har/har_{64,128,256,390}.png` | SVG + quatro PNGs transparentes; ainda não testados no Maker |
 | Mapeamento dos estados climáticos | `assets/weather/mapeamento.csv` | Registro preliminar; confirmar a ordem do Maker |
-| PNGs climáticos 0–28 em 64×64 transparentes | `assets/weather/png_64/` | Gerados por `tools/build_weather.py`; inspecionar workflow |
-| Prévia dos estados climáticos | `assets/weather/preview.png` | Gerada automaticamente |
-| ZIP com ícones climáticos | `dist/nomos-weather-29.zip` | Gerado automaticamente |
-| Mockup conceitual aprovado na conversa | — | Ainda não versionado como arquivo binário; consultar referência da conversa |
+| PNGs climáticos 0–28 em 64×64 transparentes | `assets/weather/png_64/` | Gerados e versionados por `tools/build_weather.py`; workflow passou |
+| Prévia dos estados climáticos | `assets/weather/preview.png` | Gerada e versionada |
+| ZIP com ícones climáticos | `dist/nomos-weather-29.zip` | Gerado e versionado |
+| Mockup conceitual aprovado na conversa | `assets/concepts/nomos-face-01-10-09-preview.webp` | Cópia reduzida/recomprimida em 390×450; apenas referência visual, não usar como fundo final |
 | Set tipográfico 0–9 da hora | — | **PENDENTE**, desenho não fechado |
 | Background final 390×450 | — | **PENDENTE** |
 | AOD | — | **PENDENTE** |

@@ -24,4 +24,13 @@ Ainda não há pacote `.zab`, publicação aprovada ou prova de funcionamento no
 - [Watchface Maker FAQ](https://docs.zepp.com/docs/guides/faq/watchface-maker/)
 - [Watch Face Specification](https://docs.zepp.com/docs/watchface/specification/)
 
-O catálogo, arquivos de origem e scripts serão acrescentados progressivamente, com proveniência e licenças explícitas.
+## Materiais no repositório
+
+- [Glifo HAR vetorial](assets/har/har.svg) e PNGs transparentes de 64, 128, 256 e 390 px (`assets/har/`).
+- [Estudo visual 10:09 de 390×450](assets/concepts/nomos-face-01-10-09-preview.webp) — **prévia comprimida** para referência, não fundo final da face.
+- [Conjunto climático 0–28](assets/weather/png_64/) — 29 ícones PNG RGBA 64×64.
+- [Prancha climática](assets/weather/preview.png) e [ZIP para download](dist/nomos-weather-29.zip).
+- [Conceito](docs/CONCEITO.md), [inventário](docs/ASSETS.md), [procedimento Zepp Maker](docs/ZEPP-MAKER.md), [atribuições](docs/TERCEIROS.md) e [orientações Codex](AGENTS.md).
+- Geradores automatizados em `tools/`, executados e publicados por GitHub Actions.
+
+**Estado do produto:** os dois pipelines de assets passaram, mas o mostrador ainda **não existe como watch face instalada**, não foi importado pelo Maker e não possui `.zab` validado. Os números do mockup são ilustrativos. A sequência climática deve ser confrontada com a interface Zepp atual antes do upload.
