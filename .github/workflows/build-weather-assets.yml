@@ -1,0 +1,34 @@
+name: Build Zepp weather assets
+on:
+  push:
+    paths:
+      - 'tools/build_weather.py'
+      - 'assets/weather/mapeamento.csv'
+      - '.github/workflows/build-weather-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install input icon package and rendering libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y adwaita-icon-theme fonts-dejavu-core
+          python -m pip install --disable-pip-version-check Pillow==11.3.0 CairoSVG==2.8.2
+      - name: Generate and validate 29 transparent PNGs
+        run: python tools/build_weather.py
+      - name: Commit generated assets to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/weather/png_64 assets/weather/preview.png dist/nomos-weather-29.zip docs/licenses/adwaita-debian-copyright.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: render 29 weather icons from Adwaita"
+            git push
+          fi
