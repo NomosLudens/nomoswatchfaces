@@ -1,16 +1,12 @@
 # AGENTS.md — NOMOS Watchfaces
 
-Objetivo: uma **watch face original** para Amazfit Bip 6, montada **no Zepp Watchface Maker**, sem criar SDK, app próprio ou infraestrutura desnecessária.
+Objetivo: face original Amazfit Bip 6 no **Zepp Watchface Maker**, sem SDK ou infraestrutura nova não solicitada.
 
-**Gates de produto:** conceito aprovado → três testes visuais originais de clima → validação do mapeamento Zepp → conjunto completo → importação → relógio físico.
-
-Regras:
-- Mantenha **HAR** fiel às três estruturas fornecidas pelo proprietário; não alterar suas formas.
-- Use somente **laranja e escala de cinza**.
-- O estudo MONOLITH + EDITORIAL CHAOS é referência de composição, não a arte final.
-- **Não reutilize nem regenere** os 29 ícones genéricos Adwaita removidos por rejeição estética; veja `docs/INCIDENTE-CLIMA.md`.
-- **Não** criar 29 ícones antes de aprovação de três símbolos distintos e **originais**.
-- Não atribuir condições Zepp a índices com base em suposição; confirmar a sequência no Maker.
-- Não declarar PASS com base apenas em gerar PNG, passar build/CI, produzir mockup ou atualizar GitHub.
-- Não fingir funcionamento com valores, temporizadores, mockups ou APIs imaginárias.
-- Alterações pequenas, reversíveis, isoladas. Preservar os arquivos e a identidade já aprovados.
+- Preserve rigorosamente o glifo HAR com as três estruturas originais.
+- Use apenas laranja e escala de cinza. Direção: MONOLITH + EDITORIAL CHAOS.
+- Os recursos `assets/weather/svg/0.svg..28.svg` são **NOVOS ícones autorais da Fase 02, ainda em avaliação**; não são derivados do GNOME Adwaita.
+- Os ícones genéricos Adwaita anteriores foram rejeitados: **NÃO restaurar nem reutilizar** (ver `docs/INCIDENTE-CLIMA.md`).
+- Alterar os desenhos da Fase 02 somente conforme avaliação da prancha; mudanças pequenas e reversíveis.
+- Mapeamento climático segue especificação Zepp 0–28, mas **confirmar no Maker atual** antes de enviar.
+- SVG/PNG e CI verde não significam que o relógio funcione; declarar PASS só após upload, sensores reais e teste físico do Bip 6.
+- Não usar mocks, dados fictícios, bibliotecas de ícones genéricos ou substituições de arte não aprovadas.

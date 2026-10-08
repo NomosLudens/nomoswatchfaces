@@ -1,0 +1,76 @@
+name: Render NOMOS weather originals
+on:
+  push:
+    paths:
+      - 'assets/weather/svg/**'
+      - 'assets/weather/mapeamento.csv'
+      - '.github/workflows/render-weather-original.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rasterizer
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0 CairoSVG==2.8.2
+      - name: Render and test original icon set
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageDraw,ImageFont
+          from zipfile import ZipFile,ZIP_DEFLATED
+          import cairosvg,io,csv
+          root=Path('assets/weather'); p=root/'png_64';p.mkdir(exist_ok=True)
+          files=sorted((root/'svg').glob('*.svg'),key=lambda x:int(x.stem))
+          assert [x.name for x in files]==[f'{i}.svg' for i in range(29)]
+          for f in files:
+              im=Image.open(io.BytesIO(cairosvg.svg2png(url=str(f),output_width=64,output_height=64))).convert('RGBA')
+              assert im.size==(64,64) and im.getbbox() and im.getchannel('A').getextrema()[0]==0
+              im.save(p/f'{f.stem}.png',optimize=True)
+          with (root/'mapeamento.csv').open(encoding='utf8') as f: rows=list(csv.DictReader(f))
+          assert [int(x['index_zepp']) for x in rows]==list(range(29))
+          W,H=1204,840
+          board=Image.new('RGB',(W,H),(6,6,7));d=ImageDraw.Draw(board)
+          font='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+          big=ImageFont.truetype(font,17); small=ImageFont.truetype(font,11)
+          d.text((20,18),'NOMOS // WEATHER FAMILY 01–29',font=big,fill=(245,245,241))
+          d.text((20,44),'FASE 02 · ESTUDOS VETORIAIS · 64x64 RGBA · MAPEAMENTO ZEPP 0–28',font=small,fill=(255,112,24))
+          for i,row in enumerate(rows):
+              x=(i%7)*172;y=88+(i//7)*150
+              im=Image.open(p/f'{i}.png').resize((84,84),Image.Resampling.LANCZOS)
+              board.paste(im,(x+44,y),im)
+              d.text((x+13,y+89),f'{i:02d}',font=big,fill=(255,112,24))
+              line='';lines=[]
+              for word in row['descricao_pt_br'].upper().split():
+                  test=(line+' '+word).strip()
+                  if line and d.textbbox((0,0),test,font=small)[2]>158:
+                      lines.append(line);line=word
+                  else: line=test
+              lines.append(line)
+              for j,s in enumerate(lines[:2]):d.text((x+13,y+110+j*14),s,font=small,fill=(217,217,217))
+          board.save(root/'prancha-fase-02.png',optimize=True)
+          Path('dist').mkdir(exist_ok=True)
+          with ZipFile('dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip','w',ZIP_DEFLATED) as z:
+              for f in files:z.write(f,'svg/'+f.name)
+              for f in sorted(p.glob('*.png'),key=lambda x:int(x.stem)):z.write(f,'png_64/'+f.name)
+              z.write(root/'mapeamento.csv','mapeamento.csv')
+              z.write(root/'prancha-fase-02.png','prancha-fase-02.png')
+          with ZipFile('dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip') as z:
+              assert z.testzip() is None
+              assert len([x for x in z.namelist() if x.startswith('png_64/')])==29
+          print('ASSET_TEST_PASS 29 SVG + 29 PNG transparent 64x64; ZIP integrity verified')
+          PY
+      - name: Commit generated PNGs and ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/weather/png_64 assets/weather/prancha-fase-02.png dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(weather): exportar biblioteca NOMOS autoral 0–28"
+            git push
+          fi

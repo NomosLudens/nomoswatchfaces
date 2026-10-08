@@ -1,0 +1,30 @@
+index_zepp,descricao_pt_br,description_en,validated_in_maker
+0,Nublado,Cloudy,PENDING
+1,Pancadas de chuva,Shower,PENDING
+2,Pancadas de neve,Snow shower,PENDING
+3,Ensolarado,Sunny,PENDING
+4,Encoberto,Overcast,PENDING
+5,Chuva fraca,Light rain,PENDING
+6,Neve fraca,Light snow,PENDING
+7,Chuva moderada,Moderate rain,PENDING
+8,Neve moderada,Moderate snow,PENDING
+9,Neve forte,Heavy snow,PENDING
+10,Chuva forte,Heavy rain,PENDING
+11,Tempestade de areia,Sandstorm,PENDING
+12,Chuva e neve,Sleet,PENDING
+13,Nevoeiro,Fog,PENDING
+14,Névoa seca,Haze,PENDING
+15,Chuva com trovoadas,Thundershower,PENDING
+16,Nevasca,Snowstorm,PENDING
+17,Poeira,Dust,PENDING
+18,Chuva extrema,Extraordinary rainstorm,PENDING
+19,Chuva com granizo,Rain with hail,PENDING
+20,Trovoada e granizo,Thundershowers with hail,PENDING
+21,Temporal de chuva forte,Heavy rainstorm,PENDING
+22,Areia transportada pelo vento,Sand blowing,PENDING
+23,Tempestade forte de areia,Strong sandstorm,PENDING
+24,Temporal,Rainstorm,PENDING
+25,Clima desconhecido,Unknown weather,PENDING
+26,Nublado à noite,Cloudy at night,PENDING
+27,Pancadas de chuva à noite,Shower at night,PENDING
+28,Céu limpo à noite,Clear night,PENDING

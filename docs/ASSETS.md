@@ -1,16 +1,15 @@
-# Inventário verificado
+# Inventário
 
-| Arquivo | Situação |
-|---|---|
-| `assets/har/har.svg` | Vetorização a partir do glifo fornecido; **não** aprovado como asset de exibição no relógio |
-| `assets/har/har_64.png`, `har_128.png`, `har_256.png`, `har_390.png` | Exportações transparentes existentes; sem teste no Maker |
-| `assets/concepts/nomos-face-01-10-09-preview.webp` | Estudo visual, não arte final nem fundo a ser importado |
-| Conjunto de 10 dígitos autorais | **PENDENTE**, nenhum arquivo criado |
-| Ícones climáticos autorais | **PENDENTE**, pacote genérico rejeitado e removido |
-| Fundo final 390 × 450 | **PENDENTE** |
-| AOD | **PENDENTE** |
-| Pacote `.zab` | **INEXISTENTE** |
+| Recurso | Arquivos | Estado |
+|---|---|---|
+| Glifo HAR original vetorizado | `assets/har/har.svg`, `har_{64,128,256,390}.png` | Preparado, não testado no Maker |
+| Mockup de referência | `assets/concepts/nomos-face-01-10-09-preview.webp` | Apenas conceito |
+| Ícones climáticos originais (vetoriais) | `assets/weather/svg/0.svg` a `28.svg` | **Fase 02 entregue para avaliação estética** |
+| PNG 64×64 RGBA | `assets/weather/png_64/0.png` a `28.png` | Gerado pelo workflow; não importado no Maker |
+| Prancha, ZIP e mapeamento | `assets/weather/prancha-fase-02.png`, `dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip`, `assets/weather/mapeamento.csv` | Assets preliminares; mapeamento não validado no Maker |
+| Conjunto tipográfico da hora 0–9 | — | PENDENTE |
+| Fundo final 390×450 | — | PENDENTE |
+| AOD | — | PENDENTE |
+| Pacote `.zab` | — | INEXISTENTE |
 
-**Não confundir:** os ícones climáticos genéricos gerados anteriormente foram removidos da branch principal. Não há biblioteca climática aprovada.
-
-Critérios para cada novo asset: origem explícita; aprovação estética; dimensões coerentes com o layout; mapeamento correto no Maker quando aplicável; instalação e leitura reais no Bip 6 antes de concluir.
+**O pacote genérico Adwaita foi removido da main e continua rejeitado.** Não chamar a Fase 02 de final nem funcional sem aceite visual e teste real no Amazfit Bip 6.
