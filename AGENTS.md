@@ -1,14 +1,16 @@
-# Diretrizes para Codex — NOMOS Watchfaces
+# AGENTS.md — NOMOS Watchfaces
 
-Escopo: primeira face NOMOS FACE 01, **Zepp Watchface Maker no navegador**, não criar app próprio, SDK ou firmware sem decisão expressa.
+Objetivo: uma **watch face original** para Amazfit Bip 6, montada **no Zepp Watchface Maker**, sem criar SDK, app próprio ou infraestrutura desnecessária.
 
-- Produto funcionando > teste real > dados reais > rollback > código bonito.
-- Este repositório contém um **estudo visual e gerador de assets**, não um mostrador operacional.
-- Preserve exatamente a silhueta e três estruturas do glifo HAR (`assets/har/har.svg`); nunca invente um HAR substituto.
-- Paleta apenas laranja, preto, branco e cinzas.
-- Aproveite recursos já presentes, não desenhe manualmente dezenas de estados climáticos.
-- Modificar o conjunto de clima apenas com justificativa e validar `0…28` contra o editor atual.
-- NÃO tratar compilação de PNG/CI como prova da instalação da face.
-- NÃO afirmar que relógio, sensores, clima, AOD ou appId foram testados sem evidência do Bip 6 físico.
-- Evitar mocks, placeholders e dados hardcoded em assets finais. Valores de um *mockup de conceito* são apenas exemplos.
-- Documentar qualquer etapa dependente de autenticação humana no Zepp Maker.
+**Gates de produto:** conceito aprovado → três testes visuais originais de clima → validação do mapeamento Zepp → conjunto completo → importação → relógio físico.
+
+Regras:
+- Mantenha **HAR** fiel às três estruturas fornecidas pelo proprietário; não alterar suas formas.
+- Use somente **laranja e escala de cinza**.
+- O estudo MONOLITH + EDITORIAL CHAOS é referência de composição, não a arte final.
+- **Não reutilize nem regenere** os 29 ícones genéricos Adwaita removidos por rejeição estética; veja `docs/INCIDENTE-CLIMA.md`.
+- **Não** criar 29 ícones antes de aprovação de três símbolos distintos e **originais**.
+- Não atribuir condições Zepp a índices com base em suposição; confirmar a sequência no Maker.
+- Não declarar PASS com base apenas em gerar PNG, passar build/CI, produzir mockup ou atualizar GitHub.
+- Não fingir funcionamento com valores, temporizadores, mockups ou APIs imaginárias.
+- Alterações pequenas, reversíveis, isoladas. Preservar os arquivos e a identidade já aprovados.

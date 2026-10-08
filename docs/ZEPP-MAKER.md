@@ -1,21 +1,21 @@
-# Fluxo de trabalho — Zepp Console e Watchface Maker
+# Fluxo — Zepp Console / Watchface Maker
 
-1. Console: https://console.zepp.com/#/service/app/form/watchface
-2. Maker: https://watchface.zepp.com/create
-3. Usar formato Zepp OS e resolução **390×450**. Confirmar que **Amazfit Bip 6** consta nos dispositivos suportados.
-4. Verificar se o Maker usa o cadastro existente **NOMOS FACE 01 / appId 1130388**. Não publicar com App ID divergente.
-5. Preferir template em branco. Criar base 390×450 e importar glifo HAR sem alterar proporções.
-6. Usar componente **Time → Digital Time** e as **10 artes (0–9)** de tamanho idêntico para a hora/minuto, se a tipografia autoral for aprovada.
-7. Para clima, usar os PNGs 0–28 da pasta `assets/weather/png_64`. Confirmar **ordem exata de mapeamento na versão atual do Maker** antes do upload.
-8. Inserir dados reais pelos componentes Zepp: tempo, data, passos, bateria e clima.
-9. AOD deve minimizar conteúdo e contraste; implementar após a face principal funcionar.
-10. Testar no relógio: abertura, atualização do horário e data, ícones com condições reais, sensores e AOD.
+Console: https://console.zepp.com/#/service/app/form/watchface
+Maker: https://watchface.zepp.com/create
 
-**Estado atual:** só planejamento e preparação de assets. Nenhum teste de importação, preview, pacote ou execução real foi confirmado.
+1. Design em **390 × 450**, formato Zepp OS, com seleção explícita do **Amazfit Bip 6**. Confirmar na interface a compatibilidade e o template em branco.
+2. Verificar vínculo do Maker com o registro existente **NOMOS FACE 01 / 1130388**. Nunca assumir correspondência automática.
+3. Aprovar o desenho dos algarismos 0–9, de mesmo tamanho por conjunto, antes de importar no componente Digital Time.
+4. Aprovar **três amostras climáticas autorais** (céu limpo, nublado, chuva). Só então ampliar e revisar **cada mapeamento** oferecido pelo Maker. A faixa histórica 0–28 não prova que a versão atual usa exatamente essa sequência.
+5. Integrar HAR sem descaracterizar o desenho original.
+6. Vincular hora, data, bateria, passos e clima **aos componentes de dados reais do Zepp**. Nunca gravar valores fictícios na imagem final.
+7. Criar versão AOD a partir da face aprovada.
+8. Importar, instalar pelo Zepp e testar **no Bip 6 físico**: abertura, legibilidade, mudança de minutos/data, atualização das condições climáticas e sensores, AOD.
+9. Publicação e aprovação são uma etapa posterior, não prova de que o produto funciona.
 
-## Docs oficiais
+**Status:** nenhuma destas verificações físicas foi concluída. Não existe pacote de clima aceito. Os assets rejeitados estão registrados em `docs/INCIDENTE-CLIMA.md` e foram removidos da main.
+
+Docs oficiais:
 - https://docs.zepp.com/docs/guides/faq/watchface-maker/
 - https://docs.zepp.com/docs/designs/customization/watchface/
-- https://docs.zepp.com/docs/watchface/specification/
 - https://docs.zepp.com/docs/guides/tools/watchface/guides/time/
-- https://docs.zepp.com/docs/guides/tools/watchface/guides/editable-component/

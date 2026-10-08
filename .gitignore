@@ -3,4 +3,3 @@ __pycache__/
 .venv/
 .env
 node_modules/
-# Build outputs are intentionally committed by the asset workflow; do not ignore dist/ or weather PNGs.

@@ -1,36 +1,28 @@
 # NOMOS Watchfaces
 
-Identidade visual e assets para mostradores Amazfit, começando por **NOMOS FACE 01** (Amazfit Bip 6, 390 × 450 pixels).
+Projeto autoral de mostradores Amazfit. Primeiro alvo: **NOMOS FACE 01 — Amazfit Bip 6 (390 × 450 px)**.
 
-**Estado: CONCEITO / NÃO INSTALADO.** O projeto ainda não foi importado e validado no [Zepp Watchface Maker](https://watchface.zepp.com/) nem no relógio físico.
+**Estado: CONCEITO.** Nenhum projeto do Zepp Maker foi validado, nenhum pacote `.zab` existe e nenhum fluxo foi testado no Bip 6 físico.
 
-## Direção visual
+## Identidade aprovada
+- Glifo **HAR** fornecido pelo proprietário, composto por três estruturas; não redesenhar nem descaracterizar.
+- Exclusivamente **laranja e escala de cinza**.
+- Direção **MONOLITH + EDITORIAL CHAOS**: tipografia geométrica autoral, hierarquia clara, assimetria controlada, espaço negativo. Nada de dashboard genérico.
+- Horário como protagonista. Data, bateria, passos e clima pequenos, sempre vinculados a dados reais.
 
-- Glifo **HAR** original do proprietário como assinatura da face; preservar suas três estruturas sem separar, redesenhar ou modificar os traços.
-- Paleta estrita: laranja, preto, branco e escala de cinza.
-- Tipografia geométrica autoral, composição brutalista/editorial assimétrica e muito espaço negativo.
-- Hora protagonista; data, bateria, passos e clima discretos; evitar anéis de progresso e painéis genéricos.
-- Tela de referência: **390 × 450 px**, cantos arredondados.
-- Projeto criado no Zepp Console: **NOMOS FACE 01 — appId 1130388**. Vínculo com projeto do Maker ainda não confirmado.
+## Recursos existentes
+- [HAR — SVG e PNGs transparentes](assets/har/) (original entregue pelo proprietário; vetorização e exportação, ainda sem teste no Maker).
+- [Mockup conceitual](assets/concepts/nomos-face-01-10-09-preview.webp) (apenas referência visual, não tela final).
+- [Conceito e decisões](docs/CONCEITO.md).
+- [Inventário real de assets](docs/ASSETS.md).
+- [Fluxo Zepp Maker](docs/ZEPP-MAKER.md).
+- [Plano dos ícones climáticos autorais](docs/CLIMA-IDENTIDADE.md).
+- [Orientações para Codex](AGENTS.md).
 
-## Status
+## Incidente da biblioteca de clima
 
-Ainda não há pacote `.zab`, publicação aprovada ou prova de funcionamento no Bip 6. Os recursos gráficos são estudos, não dados reais nem interface operante.
+O primeiro pacote climático continha 29 **derivações de ícones genéricos Adwaita**, sem identidade visual aprovada e sem importação/validação no Zepp Maker. Foi **rejeitado e retirado da branch `main`**. Não deve ser utilizado. Consulte [o registro do incidente](docs/INCIDENTE-CLIMA.md). O histórico de commits permanece para recuperação/auditoria, sem que esses assets façam parte da versão atual.
 
-## Referências oficiais
+**Próximo gate:** apresentar apenas **três estudos originais** (sol, nublado, chuva) no mesmo grid; obter aprovação visual antes de desenhar a família completa. O código/gerador só deve existir se reduzir trabalho real, sem substituir a etapa artística.
 
-- [Watchface Maker](https://watchface.zepp.com/)
-- [Watch Face Design](https://docs.zepp.com/docs/designs/customization/watchface/)
-- [Watchface Maker FAQ](https://docs.zepp.com/docs/guides/faq/watchface-maker/)
-- [Watch Face Specification](https://docs.zepp.com/docs/watchface/specification/)
-
-## Materiais no repositório
-
-- [Glifo HAR vetorial](assets/har/har.svg) e PNGs transparentes de 64, 128, 256 e 390 px (`assets/har/`).
-- [Estudo visual 10:09 de 390×450](assets/concepts/nomos-face-01-10-09-preview.webp) — **prévia comprimida** para referência, não fundo final da face.
-- [Conjunto climático 0–28](assets/weather/png_64/) — 29 ícones PNG RGBA 64×64.
-- [Prancha climática](assets/weather/preview.png) e [ZIP para download](dist/nomos-weather-29.zip).
-- [Conceito](docs/CONCEITO.md), [inventário](docs/ASSETS.md), [procedimento Zepp Maker](docs/ZEPP-MAKER.md), [atribuições](docs/TERCEIROS.md) e [orientações Codex](AGENTS.md).
-- Geradores automatizados em `tools/`, executados e publicados por GitHub Actions.
-
-**Estado do produto:** os dois pipelines de assets passaram, mas o mostrador ainda **não existe como watch face instalada**, não foi importado pelo Maker e não possui `.zab` validado. Os números do mockup são ilustrativos. A sequência climática deve ser confrontada com a interface Zepp atual antes do upload.
+Zepp Developer Console: NOMOS FACE 01, **App ID 1130388**. O vínculo com um projeto Maker continua **não confirmado**.
