@@ -11,3 +11,9 @@
 | Pacote `.zab` | — | Inexistente |
 
 **Não chamar o conjunto de numerais de funcional no Zepp antes de importar e testar.** Os dez arquivos têm tamanho uniforme e transparência verdadeira, mas o editor e o relógio ainda não foram verificados.
+
+## Localização de datas
+- **EN (preservado):** `assets/date/weekdays/` (7) e `assets/date/months/` (12).
+- **pt-BR (novo):** `assets/date/pt-BR/weekdays/` (7) e `assets/date/pt-BR/months/` (12); `SAB.png` exibe **SÁB**.
+- ZIPs de cada idioma em `dist/NOMOS_FACE_01_DATA_EN.zip` e `dist/NOMOS_FACE_01_DATA_PT_BR.zip`.
+- Aprovação visual e teste de importação, idioma e data dinâmica ainda pendentes.

@@ -16,3 +16,10 @@ Sete abreviações de dia da semana (`MON..SUN`) e doze meses (`JAN..DEC`) em in
 
 ## Verificação
 A rotina `tools/render_support_assets.py` verifica a existência de **26 PNGs RGBA transparentes**, ambos os pontos do separador, contagens dos dias e meses, e integridade ZIP. Isto prova apenas a geração de recursos, **não** o funcionamento de sensores ou montagem no Maker.
+
+## Dois idiomas de data
+- Inglês mantido nos caminhos anteriores (`date/weekdays`, `date/months`).
+- Português do Brasil adicional em `date/pt-BR/weekdays` e `date/pt-BR/months` — sem sobrescrever o inglês.
+- Dias: SEG, TER, QUA, QUI, SEX, SÁB, DOM (arquivo `SAB.png`); meses: JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ.
+- Todos os rótulos com canvas `220x72`, transparência e a mesma tipografia da versão inglesa.
+- ZIPs separados para as duas versões. O Zepp Maker precisa ser verificado antes de afirmar troca de idioma automática; por ora são dois conjuntos independentes.

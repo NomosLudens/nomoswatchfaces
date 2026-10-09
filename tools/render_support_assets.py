@@ -91,6 +91,51 @@ def preview():
     board.save(OUT/"support/preview.png", optimize=True)
 
 
+
+# These are two independent language packs. The English directory is preserved.
+# ZIP import/locale switching inside Zepp Maker is NOT verified.
+PTBR_DAYS = (("SEG", "SEG"), ("TER", "TER"), ("QUA", "QUA"),
+             ("QUI", "QUI"), ("SEX", "SEX"), ("SAB", "SÁB"), ("DOM", "DOM"))
+PTBR_MONTHS = (("JAN", "JAN"), ("FEV", "FEV"), ("MAR", "MAR"),
+               ("ABR", "ABR"), ("MAI", "MAI"), ("JUN", "JUN"),
+               ("JUL", "JUL"), ("AGO", "AGO"), ("SET", "SET"),
+               ("OUT", "OUT"), ("NOV", "NOV"), ("DEZ", "DEZ"))
+EN_DAYS = ("MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN")
+EN_MONTHS = ("JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+             "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+
+
+def make_ptbr_preview():
+    board = Image.new("RGB", (1150, 540), (6, 6, 7))
+    d = ImageDraw.Draw(board)
+    font = ImageFont.truetype(FONT, 19)
+    d.text((26, 24), "NOMOS FACE 01 / DATA PT-BR", font=font, fill=(230, 230, 230))
+    d.text((26, 71), "DIAS DA SEMANA", font=font, fill=(255, 112, 24))
+    for i, (key, _) in enumerate(PTBR_DAYS):
+        im = Image.open(OUT / "date/pt-BR/weekdays" / f"{key}.png")
+        im.thumbnail((150, 60))
+        board.paste(im, (10 + i * 160, 112), im)
+    d.text((26, 241), "MESES", font=font, fill=(255, 112, 24))
+    for i, (key, _) in enumerate(PTBR_MONTHS):
+        im = Image.open(OUT / "date/pt-BR/months" / f"{key}.png")
+        im.thumbnail((154, 60))
+        board.paste(im, (8 + i % 6 * 190, 293 + i // 6 * 80), im)
+    target = OUT / "support/date-pt-BR-preview.png"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    board.save(target, optimize=True)
+
+
+def build_locale_zip(destination, days_dir, months_dir, day_keys, month_keys):
+    with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as z:
+        for folder, keys in ((days_dir, day_keys), (months_dir, month_keys)):
+            for key in keys:
+                path = folder / f"{key}.png"
+                assert path.is_file(), f"Missing localized asset: {path}"
+                z.write(path, f"{folder.name}/{path.name}")
+    with zipfile.ZipFile(destination) as z:
+        assert z.testzip() is None and len(z.namelist()) == 19
+
+
 def main():
     for width in (64, 96, 128): make_colon(width)
     for w, h in ((67, 240), (89, 320)): make_battery(w, h)
@@ -98,26 +143,46 @@ def main():
         text_asset(value, OUT / "date/weekdays" / f"{value}.png")
     for value in ("JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"):
         text_asset(value, OUT / "date/months" / f"{value}.png")
+    # Keep all 19 existing English images and add 19 independent pt-BR files.
+    for key, display in PTBR_DAYS:
+        text_asset(display, OUT / "date/pt-BR/weekdays" / f"{key}.png")
+    for key, display in PTBR_MONTHS:
+        text_asset(display, OUT / "date/pt-BR/months" / f"{key}.png")
     preview()
+    make_ptbr_preview()
     pngs = [*sorted((OUT/"separators").glob("*.png")),
             *sorted((OUT/"battery").glob("*.png")),
             *sorted((OUT/"date").rglob("*.png"))]
-    assert len(pngs) == 26, f"expected 26 support assets, got {len(pngs)}"
-    assert len([p for p in pngs if p.parent.name == "weekdays"]) == 7
-    assert len([p for p in pngs if p.parent.name == "months"]) == 12
+    assert len(pngs) == 45, f"expected 45 total transparent PNG assets, got {len(pngs)}"
+    en_days = OUT/"date/weekdays"
+    en_months = OUT/"date/months"
+    pt_days = OUT/"date/pt-BR/weekdays"
+    pt_months = OUT/"date/pt-BR/months"
+    for folder, expected in ((en_days, 7), (en_months, 12), (pt_days, 7), (pt_months, 12)):
+        assert len(list(folder.glob("*.png"))) == expected, folder
+    # Accented Saturday is rendered in the PNG but filename remains ASCII.
+    assert (pt_days/"SAB.png").is_file()
     for path in pngs:
         im = Image.open(path)
-        assert im.mode == "RGBA" and im.getchannel("A").getextrema()[0] == 0, path
+        assert im.mode == "RGBA" and im.size == ((220, 72) if "date" in path.parts else im.size)
+        assert im.getchannel("A").getextrema()[0] == 0, path
     (ROOT/"dist").mkdir(parents=True, exist_ok=True)
+    build_locale_zip(ROOT/"dist/NOMOS_FACE_01_DATA_EN.zip",
+                     en_days, en_months, EN_DAYS, EN_MONTHS)
+    build_locale_zip(ROOT/"dist/NOMOS_FACE_01_DATA_PT_BR.zip",
+                     pt_days, pt_months,
+                     [key for key, _ in PTBR_DAYS],
+                     [key for key, _ in PTBR_MONTHS])
     zp = ROOT/"dist/NOMOS_FACE_01_COMPLEMENTOS.zip"
     with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
         for path in pngs:
             z.write(path, path.relative_to(OUT))
         z.write(OUT/"support/preview.png", "support/preview.png")
+        z.write(OUT/"support/date-pt-BR-preview.png", "support/date-pt-BR-preview.png")
     with zipfile.ZipFile(zp) as z:
-        assert z.testzip() is None and len(z.namelist()) == 27
-    print("ASSETS_PASS: 26 transparent PNGs + preview + ZIP")
-    print("NOTE: Zepp Maker binding and physical Bip 6 flow NOT TESTED")
+        assert z.testzip() is None and len(z.namelist()) == 47
+    print("ASSETS_PASS: 45 transparent PNGs incl. 19 EN + 19 PT-BR date assets; 2 locale ZIPs + main ZIP")
+    print("NOTE: Zepp Maker locale support and physical Bip 6 flow NOT TESTED")
 
 
 if __name__ == "__main__":

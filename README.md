@@ -32,3 +32,9 @@ Os 29 ícones climáticos da Fase 02 ainda exigem aceite visual e teste no Zepp 
 - [Gerador reproduzível](tools/render_support_assets.py), executado por GitHub Actions.
 
 **Atenção:** os PNGs são apenas recursos gráficos. Ainda falta vinculá-los aos dados reais e verificar a instalação no Bip 6. A formatação da data no Maker e o preenchimento dinâmico de bateria permanecem pendentes de confirmação na interface.
+
+## Datas em dois idiomas
+- **English (EN):** [dias](assets/date/weekdays/) e [meses](assets/date/months/) — arquivos originais preservados sem renomeação.
+- **Português do Brasil (pt-BR):** [dias](assets/date/pt-BR/weekdays/) e [meses](assets/date/pt-BR/months/) — SEG, TER, QUA, QUI, SEX, SÁB, DOM e JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ.
+- Pacotes independentes: [EN](dist/NOMOS_FACE_01_DATA_EN.zip) · [PT-BR](dist/NOMOS_FACE_01_DATA_PT_BR.zip); [prévia PT-BR](assets/support/date-pt-BR-preview.png).
+- **Não foi validada alternância automática de idioma no Maker.** Se não houver suporte nativo, podemos publicar duas variantes mantendo exatamente a mesma identidade visual. O número do dia é dado dinâmico, não parte dessas imagens.
