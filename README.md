@@ -5,7 +5,7 @@ Projeto de mostradores personalizados para Amazfit. Primeiro alvo: **NOMOS FACE 
 **Estado do produto: ASSETS + CONCEITO.** Ainda não foi montado ou testado no Zepp Watchface Maker e não existe `.zab` validado no relógio físico.
 
 ## Identidade
-- Glifo HAR fornecido pelo proprietário, preservando três estruturas originais.
+- Glifo RAAR fornecido pelo proprietário, preservando três estruturas originais.
 - Laranja e escala de cinza, sem outras cores.
 - MONOLITH + EDITORIAL CHAOS: números brutalistas originais, formas contínuas (sem traços misturados/interrompidos), escala de cinza harmonizada.
 - Hora protagonista; outros indicadores com dados reais do Zepp.
@@ -14,7 +14,7 @@ Projeto de mostradores personalizados para Amazfit. Primeiro alvo: **NOMOS FACE 
 - **[NUMERAIS APROVADOS — dez PNGs 0–9, 320×420 com transparência](assets/numerals/png_320x420/)**
 - **[Prévia dos numerais aprovados](assets/numerals/preview.webp)**
 - [Ficha de produção dos numerais](assets/numerals/README.md)
-- [HAR SVG/PNG](assets/har/) — já versionado; nenhuma cópia duplicada.
+- [RAAR SVG/PNG](assets/raar/) — já versionado; nenhuma cópia duplicada.
 - [Mockup conceitual anterior](assets/concepts/nomos-face-01-10-09-preview.webp)
 - [29 SVG climáticos da Fase 02](assets/weather/svg/)
 - [29 PNG climáticos](assets/weather/png_64/) / [mapeamento](assets/weather/mapeamento.csv)

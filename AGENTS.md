@@ -2,7 +2,7 @@
 
 Objetivo: face original Amazfit Bip 6 no **Zepp Watchface Maker**, sem SDK ou infraestrutura nova não solicitada.
 
-- Preserve rigorosamente o glifo HAR com as três estruturas originais.
+- Preserve rigorosamente o glifo RAAR com as três estruturas originais.
 - Use apenas laranja e escala de cinza. Direção: MONOLITH + EDITORIAL CHAOS.
 - Os recursos `assets/weather/svg/0.svg..28.svg` são **NOVOS ícones autorais da Fase 02, ainda em avaliação**; não são derivados do GNOME Adwaita.
 - Os ícones genéricos Adwaita anteriores foram rejeitados: **NÃO restaurar nem reutilizar** (ver `docs/INCIDENTE-CLIMA.md`).

@@ -65,15 +65,15 @@ def preview():
     d = ImageDraw.Draw(board)
     font = ImageFont.truetype(FONT, 19)
     d.text((28, 16), "NOMOS FACE 01 / COMPLEMENTOS", font=font, fill=(238,238,238))
-    glifo = ROOT / "assets/har/har_128.png"
+    glifo = ROOT / "assets/raar/raar_128.png"
     if glifo.exists():
-        har = Image.open(glifo).convert("RGBA").resize((120, 120))
-        board.paste(har, (40, 74), har)
+        raar = Image.open(glifo).convert("RGBA").resize((120, 120))
+        board.paste(raar, (40, 74), raar)
     colon = Image.open(OUT/"separators/colon_64.png")
     board.paste(colon, (260, 67), colon)
     frame = Image.open(OUT/"battery/battery_frame_67x240.png")
     board.paste(frame, (448, 56), frame)
-    d.text((35, 265), "HAR (EXISTENTE)", font=font, fill=(140,140,140))
+    d.text((35, 265), "RAAR (EXISTENTE)", font=font, fill=(140,140,140))
     d.text((260, 265), "DOIS PONTOS", font=font, fill=(140,140,140))
     d.text((448, 315), "BATERIA - MOLDURA", font=font, fill=(140,140,140))
     d.text((28, 380), "SEMANA / CANDIDATO", font=font, fill=(190,190,190))

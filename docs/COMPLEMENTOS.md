@@ -2,8 +2,8 @@
 
 **Estado:** assets gráficos preliminares, sem importação ou teste no Zepp Maker/Bip 6.
 
-## Glifo HAR
-Já existe em `assets/har/har.svg` e quatro tamanhos PNG; não criamos ou redesenhamos outro glifo.
+## Glifo RAAR
+Já existe em `assets/raar/raar.svg` e quatro tamanhos PNG; não criamos ou redesenhamos outro glifo.
 
 ## Separador
 `colon_64.png`, `colon_96.png`, `colon_128.png` têm dois pontos **separados** em laranja, com canvas vertical 1:2 e transparência real. Houve correção de um protótipo local com apenas um ponto. **Não reutilizar aquele arquivo defeituoso.**

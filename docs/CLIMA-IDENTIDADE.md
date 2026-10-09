@@ -13,7 +13,7 @@ O objetivo é um alfabeto climático **original** e compacto, integrado à face 
 - Paleta preta/branca/cinza/laranja, sem outras cores.
 - Canvas de avaliação proposto: **64 × 64 px RGBA**, transparente. A escala final depende da composição aprovada na tela 390 × 450.
 - Sem sombra, gradiente gratuito, efeitos gamer ou círculos de progresso.
-- Nenhum dos símbolos deve reutilizar diretamente o glifo HAR; apenas compartilhar espessuras, ângulos e proporções familiares.
+- Nenhum dos símbolos deve reutilizar diretamente o glifo RAAR; apenas compartilhar espessuras, ângulos e proporções familiares.
 - Avaliar cada amostra reduzida para **32 × 32 px** sobre fundo preto; rejeitar se perder legibilidade.
 - Exibir os três lado a lado e obter aprovação explícita **antes de expandir a família**.
 

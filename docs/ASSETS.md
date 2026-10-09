@@ -4,7 +4,7 @@
 |---|---|---|
 | Numerais brutalistas 0 a 9 | `assets/numerals/png_320x420/0.png` a `9.png` | **Aprovados visualmente** pelo proprietário; recortados da última prancha aceita; 320×420 PNG RGBA transparente |
 | Prévia dos numerais | `assets/numerals/preview.webp` | Prancha de conferência, não importar como dígito |
-| Glifo HAR | `assets/har/har.svg`, PNGs de 64, 128, 256 e 390 px | Preparado; não testado no Maker |
+| Glifo RAAR | `assets/raar/raar.svg`, PNGs de 64, 128, 256 e 390 px | Preparado; não testado no Maker |
 | Conceito anterior de watch face | `assets/concepts/nomos-face-01-10-09-preview.webp` | Estudo visual, não tela final |
 | Ícones climáticos originais da fase 02 | `assets/weather/svg/0.svg` a `28.svg` e `assets/weather/png_64/0.png` a `28.png` | Em avaliação; mapeamento não confirmado no Maker |
 | AOD e fundo final | — | Pendentes |

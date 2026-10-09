@@ -7,7 +7,7 @@ Maker: https://watchface.zepp.com/create
 2. Verificar vínculo do Maker com o registro existente **NOMOS FACE 01 / 1130388**. Nunca assumir correspondência automática.
 3. Aprovar o desenho dos algarismos 0–9, de mesmo tamanho por conjunto, antes de importar no componente Digital Time.
 4. Aprovar **três amostras climáticas autorais** (céu limpo, nublado, chuva). Só então ampliar e revisar **cada mapeamento** oferecido pelo Maker. A faixa histórica 0–28 não prova que a versão atual usa exatamente essa sequência.
-5. Integrar HAR sem descaracterizar o desenho original.
+5. Integrar RAAR sem descaracterizar o desenho original.
 6. Vincular hora, data, bateria, passos e clima **aos componentes de dados reais do Zepp**. Nunca gravar valores fictícios na imagem final.
 7. Criar versão AOD a partir da face aprovada.
 8. Importar, instalar pelo Zepp e testar **no Bip 6 físico**: abertura, legibilidade, mudança de minutos/data, atualização das condições climáticas e sensores, AOD.
