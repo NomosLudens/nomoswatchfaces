@@ -1,15 +1,13 @@
-# Inventário
+# Inventário de assets
 
 | Recurso | Arquivos | Estado |
 |---|---|---|
-| Glifo HAR original vetorizado | `assets/har/har.svg`, `har_{64,128,256,390}.png` | Preparado, não testado no Maker |
-| Mockup de referência | `assets/concepts/nomos-face-01-10-09-preview.webp` | Apenas conceito |
-| Ícones climáticos originais (vetoriais) | `assets/weather/svg/0.svg` a `28.svg` | **Fase 02 entregue para avaliação estética** |
-| PNG 64×64 RGBA | `assets/weather/png_64/0.png` a `28.png` | Gerado pelo workflow; não importado no Maker |
-| Prancha, ZIP e mapeamento | `assets/weather/prancha-fase-02.png`, `dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip`, `assets/weather/mapeamento.csv` | Assets preliminares; mapeamento não validado no Maker |
-| Conjunto tipográfico da hora 0–9 | — | PENDENTE |
-| Fundo final 390×450 | — | PENDENTE |
-| AOD | — | PENDENTE |
-| Pacote `.zab` | — | INEXISTENTE |
+| Numerais brutalistas 0 a 9 | `assets/numerals/png_320x420/0.png` a `9.png` | **Aprovados visualmente** pelo proprietário; recortados da última prancha aceita; 320×420 PNG RGBA transparente |
+| Prévia dos numerais | `assets/numerals/preview.webp` | Prancha de conferência, não importar como dígito |
+| Glifo HAR | `assets/har/har.svg`, PNGs de 64, 128, 256 e 390 px | Preparado; não testado no Maker |
+| Conceito anterior de watch face | `assets/concepts/nomos-face-01-10-09-preview.webp` | Estudo visual, não tela final |
+| Ícones climáticos originais da fase 02 | `assets/weather/svg/0.svg` a `28.svg` e `assets/weather/png_64/0.png` a `28.png` | Em avaliação; mapeamento não confirmado no Maker |
+| AOD e fundo final | — | Pendentes |
+| Pacote `.zab` | — | Inexistente |
 
-**O pacote genérico Adwaita foi removido da main e continua rejeitado.** Não chamar a Fase 02 de final nem funcional sem aceite visual e teste real no Amazfit Bip 6.
+**Não chamar o conjunto de numerais de funcional no Zepp antes de importar e testar.** Os dez arquivos têm tamanho uniforme e transparência verdadeira, mas o editor e o relógio ainda não foram verificados.

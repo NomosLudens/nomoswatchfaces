@@ -1,30 +1,25 @@
 # NOMOS Watchfaces
 
-Projeto autoral de mostradores Amazfit. Primeiro alvo: **NOMOS FACE 01 — Amazfit Bip 6 (390 × 450 px)**.
+Projeto de mostradores personalizados para Amazfit. Primeiro alvo: **NOMOS FACE 01 — Bip 6, 390 × 450 px**.
 
-**Estado: CONCEITO + ÍCONES FASE 02 EM AVALIAÇÃO.** Nenhum projeto foi importado e validado no Zepp Maker, não existe pacote `.zab` ou teste no relógio físico.
+**Estado do produto: ASSETS + CONCEITO.** Ainda não foi montado ou testado no Zepp Watchface Maker e não existe `.zab` validado no relógio físico.
 
 ## Identidade
-- Glifo **HAR** original do proprietário, três estruturas preservadas.
-- Exclusivamente laranja e escala de cinza.
-- Direção MONOLITH + EDITORIAL CHAOS: tipografia geométrica autoral, assimetria controlada, espaço negativo. Sem dashboard genérico.
-- Hora protagonista; demais indicadores dinâmicos devem usar dados reais do Zepp.
+- Glifo HAR fornecido pelo proprietário, preservando três estruturas originais.
+- Laranja e escala de cinza, sem outras cores.
+- MONOLITH + EDITORIAL CHAOS: números brutalistas originais, formas contínuas (sem traços misturados/interrompidos), escala de cinza harmonizada.
+- Hora protagonista; outros indicadores com dados reais do Zepp.
 
-## Conteúdo
+## Materiais
+- **[NUMERAIS APROVADOS — dez PNGs 0–9, 320×420 com transparência](assets/numerals/png_320x420/)**
+- **[Prévia dos numerais aprovados](assets/numerals/preview.webp)**
+- [Ficha de produção dos numerais](assets/numerals/README.md)
 - [HAR SVG/PNG](assets/har/)
-- [Estudo visual da watch face](assets/concepts/nomos-face-01-10-09-preview.webp)
-- [Fase 02 — 29 ícones SVG climáticos autorais](assets/weather/svg/)
-- [Prancha climática](assets/weather/prancha-fase-02.png) (gerada pelo workflow)
-- [29 PNGs transparentes 64×64](assets/weather/png_64/) (gerados pelo workflow)
-- [ZIP clima](dist/NOMOS_FASE_02_CLIMA_29_ORIGINAIS.zip) (gerado pelo workflow)
-- [Correspondência 0–28](assets/weather/mapeamento.csv) (baseada na especificação publicada pela Zepp; verificar Maker atual)
-- [Desenho e status da Fase 02](docs/CLIMA-FASE-02.md)
-- [Fluxo de montagem no Zepp Maker](docs/ZEPP-MAKER.md)
-- [Inventário](docs/ASSETS.md) · [Conceito](docs/CONCEITO.md) · [Codex](AGENTS.md)
+- [Mockup conceitual anterior](assets/concepts/nomos-face-01-10-09-preview.webp)
+- [29 SVG climáticos da Fase 02](assets/weather/svg/)
+- [29 PNG climáticos](assets/weather/png_64/) / [mapeamento](assets/weather/mapeamento.csv)
+- [Zepp Maker](docs/ZEPP-MAKER.md) · [Inventário](docs/ASSETS.md) · [Codex](AGENTS.md)
 
-## Histórico e status real
-Os ícones genéricos Adwaita da primeira tentativa foram **rejeitados e retirados** da main; ver [incidente](docs/INCIDENTE-CLIMA.md). A Fase 02 introduz desenhos vetoriais novos, **não** recriação dos assets rejeitados.
+Os 29 ícones climáticos da Fase 02 ainda exigem aceite visual e teste no Zepp Maker. O primeiro lote genérico, rejeitado, foi retirado da main ([incidente](docs/INCIDENTE-CLIMA.md)).
 
-Ainda pendente: aprovação visual do novo conjunto, confirmação da ordem do clima no Maker, criação das dez artes numéricas, composição final, importação, AOD e teste físico.
-
-Zepp Console: NOMOS FACE 01, **App ID 1130388** (vínculo com projeto Maker não confirmado).
+**App ID do cadastro no Zepp Console: 1130388.** Vínculo com projeto do Maker não confirmado. Nenhuma validação de funcionamento no Bip 6 foi executada.
